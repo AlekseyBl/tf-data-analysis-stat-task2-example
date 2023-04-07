@@ -12,7 +12,7 @@ def solution(p: float, x: np.array) -> tuple:
     # Не меняйте название функции и её аргументы
     alpha = 1 - p
     t = 59
-    loc = (2/t**2)*(x.mean()+0.5)
-    scale = (2/t**2)*(np.sqrt(np.var(x))-1) / np.sqrt(len(x))
+    loc = (2/t**2)*(x.mean()-0.5)
+    scale = (2/t**2)*(np.sqrt(np.var(x))+1) / np.sqrt(len(x))
     return loc - scale * expon.ppf(1 - alpha / 2), \
            loc - scale * expon.ppf(alpha / 2)
